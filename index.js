@@ -79,7 +79,7 @@ FB https://m.facebook.com/swimmimishka/
 TikTok https://www.tiktok.com/@swim_mimi
 
 YouTube https://youtube.com/@swim_mimi
-Telegram @Annet_253
+Telegram @swim_mimi
 
 
 FAQ:
@@ -325,7 +325,7 @@ function buildMessagesForModel(user, incomingText) {
   const lang = user.language || 'en';
 
   const systemInEnglish = `
-You are a helpful assistant called MimiAi. You MUST ONLY use the data provided in the "context" and the provided conversation history to answer user questions. Do NOT hallucinate or invent facts. If the user asks something outside the provided context, respond briefly in the user's language and refer them to @Annet_253 on Telegram for more information.
+You are a helpful assistant called MimiAi. You MUST ONLY use the data provided in the "context" and the provided conversation history to answer user questions. Do NOT hallucinate or invent facts. If the user asks something outside the provided context, respond briefly in the user's language and refer them to @swim_mimi on Telegram for more information.
 
 Always:
 - Prepend the conversation history (array of objects {question, aiReply}) as the first element in the prompt to the model (this has already been included).
@@ -339,7 +339,7 @@ Always:
 `;
 
   const systemInRussian = `
-Вы — полезный ассистент по имени MimiAi. ВЫ ДОЛЖНЫ ИСПОЛЬЗОВАТЬ ТОЛЬКО ДАННЫЕ, ПРЕДОСТАВЛЕННЫЕ В "context" и истории диалога, чтобы отвечать на вопросы пользователя. НЕ выдумывайте факты. Если вопрос выходит за рамки имеющегося контекста, кратко ответьте на языке пользователя и направьте его к @Annet_253 в Telegram для получения дополнительной информации.
+Вы — полезный ассистент по имени MimiAi. ВЫ ДОЛЖНЫ ИСПОЛЬЗОВАТЬ ТОЛЬКО ДАННЫЕ, ПРЕДОСТАВЛЕННЫЕ В "context" и истории диалога, чтобы отвечать на вопросы пользователя. НЕ выдумывайте факты. Если вопрос выходит за рамки имеющегося контекста, кратко ответьте на языке пользователя и направьте его к @swim_mimi в Telegram для получения дополнительной информации.
 
 Всегда:
 - Включайте историю диалога (массив объектов {question, aiReply}) как первый элемент в подсказке модели (уже включено).
@@ -361,7 +361,7 @@ Always:
     { role: 'system', content: system },
     { role: 'system', content: `context:\n${context}` },
     { role: 'system', content: `conversation_history_array:${convoString}` },
-    { role: 'user', content: `Using ONLY the context and the conversation_history_array, answer the question below in ${lang === 'ru' ? 'Russian' : 'English'}. If question is outside context, refer to @Annet_253. If the question asks "what are you", respond exactly: "I am MimiAi, an ai bot developed by swim mimi to answer all your questions". If the question asks "who created you", briefly describe the company owner using the context. Do NOT hallucinate.\n\nUser question:\n${incomingText}` }
+    { role: 'user', content: `Using ONLY the context and the conversation_history_array, answer the question below in ${lang === 'ru' ? 'Russian' : 'English'}. If question is outside context, refer to @swim_mimi. If the question asks "what are you", respond exactly: "I am MimiAi, an ai bot developed by swim mimi to answer all your questions". If the question asks "who created you", briefly describe the company owner using the context. Do NOT hallucinate.\n\nUser question:\n${incomingText}` }
   ];
 
   return messages;
