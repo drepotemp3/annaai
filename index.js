@@ -1,9 +1,5 @@
 import dotenv from "dotenv";
 import { Telegraf, Markup } from "telegraf";
-import { connectDB } from "./models/db.js";
-import { startPreaching, stopPreaching } from "./helpers/preaching.js";
-import { startMessageMonitoring, stopMessageMonitoring } from "./helpers/messageMonitor.js";
-import launchBot from "./helpers/launchbot.js";
 import express from "express";
 import mongoose from "mongoose"
 import fetch from "node-fetch"
